@@ -11,7 +11,7 @@ const Project = () => {
 
           <div className="card">
             <div className="front">
-              <img src="/devorum.png" alt="imagem pagina de login" />
+              <img className="bg-contain h-full w-full" src="/devorum.png" alt="imagem pagina de login" />
 
             </div>
             <div className="back flex flex-col justify-center  ">
@@ -62,6 +62,17 @@ const Project = () => {
               <img className="bg-cover h-full" src="/e-commerce.png" alt="" />
             </div>
             <div className="back"><a href="https://e-commerce-six-red.vercel.app/">Link para acesso</a></div>
+          </div>
+
+        </div>
+
+        <div className=" text-center text-[20px]   ">
+
+          <div className="card">
+            <div className="front">
+              <img className="bg-cover h-full w-full" src="/first-web-site.png" alt="" />
+            </div>
+            <div className="back"><a href="https://stormlig.github.io/Projeto-Website/index.html#">Link para acesso</a></div>
           </div>
 
         </div>
