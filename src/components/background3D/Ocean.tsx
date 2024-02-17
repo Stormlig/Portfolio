@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import "./water.d.ts";
-import { useRef } from "react";
-import * as THREE from "three";
-import { Water } from "three-stdlib";
-import { extend, useFrame, useLoader } from "@react-three/fiber";
 
-extend({ Water });
+import { useRef } from 'react'
+import * as THREE from 'three'
+import { Water } from 'three-stdlib'
+import { extend, useFrame, useLoader } from '@react-three/fiber'
+
+extend({ Water })
 
 export function Ocean() {
-  const waterRef = useRef<any>();
-  const waterNormals = useLoader(THREE.TextureLoader, "/waternormals.jpeg");
-  waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
+  const waterRef = useRef<any>()
+  const waterNormals = useLoader(THREE.TextureLoader, '/waternormals.jpeg')
+  waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping
 
   const config = {
     textureWidth: 512,
@@ -23,21 +23,21 @@ export function Ocean() {
     fog: false,
     wave: true,
     debugger: false,
-    lengthScale: 10.0,
-  };
+    lengthScale: 10.0
+  }
 
   const waveAnimation = {
     time: 0,
-    speed: 0.1, // Ajuste a velocidade conforme necessário
-  };
+    speed: 0.1 // Ajuste a velocidade conforme necessário
+  }
 
   useFrame((_state, delta) => {
-    waveAnimation.time += delta * waveAnimation.speed;
+    waveAnimation.time += delta * waveAnimation.speed
 
     if (waterRef.current) {
-      waterRef.current.material.uniforms.time.value = waveAnimation.time;
+      waterRef.current.material.uniforms.time.value = waveAnimation.time
     }
-  });
+  })
 
   return (
     <water
@@ -45,5 +45,5 @@ export function Ocean() {
       args={[new THREE.PlaneGeometry(5000, 5000), config]}
       rotation-x={-Math.PI / 2}
     />
-  );
+  )
 }

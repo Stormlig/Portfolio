@@ -2,7 +2,7 @@
 import { Suspense, useEffect, useState } from 'react'
 import { OrbitControls, PerspectiveCamera, Sky } from '@react-three/drei'
 import { type Vector3 } from '@react-three/fiber'
-import { IslandSkill } from '../../components/background3D/IslandSkill'
+// import { IslandSkill } from '../../components/background3D/IslandSkill'
 import { Water } from '../../components/background3D/Water'
 import { Ground } from '../../components/background3D/Ground'
 import { BoatModel } from '../../components/background3D/BoatModel'
@@ -10,12 +10,12 @@ import { IslandAbout } from '../../components/background3D/IslandAbout'
 import { IslandHobby } from '../../components/background3D/IslandHobby'
 import { IslandProjects } from '../../components/background3D/IslandProjects'
 
-export function Home3D () {
+export function Home3D() {
   const [thirdPerson, setThirdPerson] = useState(true)
   const [cameraPosition, setCameraPosition] = useState<Vector3 | any>([-6, 3.9, 6.21])
 
   useEffect(() => {
-    function keyDownHandler (e: any) {
+    function keyDownHandler(e: any) {
       if (e.key === 'k') {
         if (thirdPerson) setCameraPosition([-6, 3.9, 6.21 + Math.random() * 0.02])
         setThirdPerson(!thirdPerson)
@@ -27,6 +27,7 @@ export function Home3D () {
   }, [thirdPerson])
 
   return (
+
     <Suspense fallback={null}>
       <PerspectiveCamera far={50} near={0.1} resolution={512} position={cameraPosition} fov={40} />
       {!thirdPerson && <OrbitControls target={[-2.64, 0.51, 0.03]} />}
@@ -60,5 +61,6 @@ export function Home3D () {
       <IslandProjects />
       <Ground />
     </Suspense>
+
   )
 }

@@ -1,12 +1,12 @@
 import {
-  BodyProps,
-  CompoundBodyProps,
-  ShapeType,
-  WheelInfoOptions,
-  useCompoundBody,
-} from "@react-three/cannon";
-import { useRef } from "react";
-import { Object3D } from "three";
+  type BodyProps,
+  type CompoundBodyProps,
+  type ShapeType,
+  type WheelInfoOptions,
+  useCompoundBody
+} from '@react-three/cannon'
+import { useRef } from 'react'
+import { type Object3D } from 'three'
 
 export const useWheels = (
   width: number,
@@ -18,8 +18,8 @@ export const useWheels = (
     useRef<Object3D | null>(null),
     useRef<Object3D | null>(null),
     useRef<Object3D | null>(null),
-    useRef<Object3D | null>(null),
-  ];
+    useRef<Object3D | null>(null)
+  ]
 
   const wheelInfo: WheelInfoOptions = {
     radius,
@@ -34,31 +34,31 @@ export const useWheels = (
     rollInfluence: 0.01,
     maxSuspensionTravel: 0.1,
     customSlidingRotationalSpeed: -30,
-    useCustomSlidingRotationalSpeed: true,
-  };
+    useCustomSlidingRotationalSpeed: true
+  }
 
   const wheelInfos: WheelInfoOptions[] = [
     {
       ...wheelInfo,
       chassisConnectionPointLocal: [-width * 0.65, height * 0.4, front],
-      isFrontWheel: true,
+      isFrontWheel: true
     },
     {
       ...wheelInfo,
       chassisConnectionPointLocal: [width * 0.65, height * 0.4, front],
-      isFrontWheel: true,
+      isFrontWheel: true
     },
     {
       ...wheelInfo,
       chassisConnectionPointLocal: [-width * 0.65, height * 0.4, -front],
-      isFrontWheel: false,
+      isFrontWheel: false
     },
     {
       ...wheelInfo,
       chassisConnectionPointLocal: [width * 0.65, height * 0.4, -front],
-      isFrontWheel: false,
-    },
-  ];
+      isFrontWheel: false
+    }
+  ]
 
   const propsFunc = (): CompoundBodyProps => ({
     collisionFilterGroup: 0,
@@ -67,20 +67,18 @@ export const useWheels = (
       {
         args: [wheelInfo.radius, wheelInfo.radius, 0.5, 16],
         rotation: [0, 0, -Math.PI / 2],
-        type: "Cylinder",
+        type: 'Cylinder'
       } as BodyProps & {
-        type: ShapeType;
-      },
+        type: ShapeType
+      }
     ],
-    type: "Kinematic",
-  });
+    type: 'Kinematic'
+  })
 
-  useCompoundBody(propsFunc, wheels[0]);
-  useCompoundBody(propsFunc, wheels[1]);
-  useCompoundBody(propsFunc, wheels[2]);
-  useCompoundBody(propsFunc, wheels[3]);
+  useCompoundBody(propsFunc, wheels[0])
+  useCompoundBody(propsFunc, wheels[1])
+  useCompoundBody(propsFunc, wheels[2])
+  useCompoundBody(propsFunc, wheels[3])
 
-
-
-  return { wheels, wheelInfos };
-};
+  return { wheels, wheelInfos }
+}
