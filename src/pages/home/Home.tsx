@@ -1,9 +1,9 @@
-import About from '../../components/background/About'
-import BallAnimationWithToolsBadge from '../../components/background/BallAnimationWithToolsBadge'
-import Contact from '../../components/background/Contact'
-import Footer from '../../components/background/Footer'
-import Header from '../../components/background/Header'
-import Project from '../../components/background/Project'
+import About from '../../components/background/About/About'
+import BallAnimationWithToolsBadge from '../../components/background/Skill/components/BallAnimationWithToolsBadge'
+import Contact from '../../components/background/Contact/Contact'
+import Footer from '../../components/background/Footer/Footer'
+import Header from '../../components/background/Header/Header'
+import Project from '../../components/background/Project/Project'
 
 const Home = () => {
   return (

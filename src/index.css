@@ -35,40 +35,33 @@ body {
   }
 
   .card {
-    width: 256px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     position: relative;
-    perspective: 1000px; /* Define a perspectiva para o efeito 3D */
+    perspective: 1000px;
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
   }
 
   .front, .back {
-    position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Esconde a face traseira */
-    transition: transform 2s; /* Adiciona uma transição suave */
-  }
-
-  .front {
-    background-color: #7662a2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
   }
 
   .back {
-    background-color: #2dccd4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotateY(180deg); /* Inicialmente vira para a face de trás */
+    transform: rotateY(180deg);
   }
 
-  .card:hover .front {
-    transform: rotateY(180deg); /* Vira para a face traseira ao passar o mouse */
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
   }
 
-  .card:hover .back {
-    transform: rotateY(0deg); /* Vira de volta para a face da frente ao passar o mouse */
-  }
 }
