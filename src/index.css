@@ -34,34 +34,8 @@ body {
     @apply text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold
   }
 
-  .card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    perspective: 1000px;
+  .mySwiper .swiper-pagination-bullet{
+    background-color: white;
+    padding: 6px;
   }
-
-  .card-inner {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
-  }
-
-  .front, .back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-  }
-
-  .back {
-    transform: rotateY(180deg);
-  }
-
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
-
 }
