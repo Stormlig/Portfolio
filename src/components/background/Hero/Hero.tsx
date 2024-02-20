@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-no-undef */
 import { LuDownload } from 'react-icons/lu'
-import { Particles } from './components/Particles'
 import TextEffect from './components/TextEffect'
+import { ParticlesBg } from './components/Particles'
 
 const Hero = () => {
   return (
-    <div className=' h-[88vh] relative  '>
-      <Particles />
-      <div className='absolute flex flex-col items-start left-20 top-16 sm:left-12 max-sm:left-8 sm:mt-[4vh] md:left-20 lg:left-32 2xl:left-[10rem]'>
+    <div className='relative h-[80vh] max-[320px]:h-[100vh] '>
+      <ParticlesBg />
+      <div className='absolute top-28  flex flex-col items-baseline  sm:left-12 max-sm:left-8  md:left-20 lg:left-32 2xl:left-[10rem]'>
 
         <div >
           <h1 className='text-[30px] md:text-[35px] text-white '>
