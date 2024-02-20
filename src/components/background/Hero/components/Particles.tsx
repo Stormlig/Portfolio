@@ -1,27 +1,29 @@
+/* eslint-disable @typescript-eslint/consistent-type-imports */
+/* eslint-disable react/display-name */
 /* eslint-disable react/no-children-prop */
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable react/prop-types */
 import * as THREE from 'three'
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, memo } from 'react'
 import { Canvas, extend, useFrame, useLoader } from '@react-three/fiber'
 import { Effects } from '@react-three/drei'
 import { FilmPass, WaterPass, UnrealBloomPass, LUTPass, LUTCubeLoader } from 'three-stdlib'
+import { Perf } from 'r3f-perf'
 
 extend({ WaterPass, UnrealBloomPass, FilmPass, LUTPass })
 
-export const Particles = () => (
-  <Canvas linear flat legacy dpr={1} camera={{ fov: 105, position: [0, 0, 3] }}>
-    <ambientLight intensity={0.3} />
-    <pointLight distance={15} intensity={1} color="#ff0000" />
-    <spotLight intensity={1} penumbra={1} color="#fb0202" />
+export const ParticlesBg = memo(() => (
+  <Canvas linear flat legacy dpr={1} camera={{ fov: 100, position: [0, 0, 30] }}>
+    <Perf />
 
-    <Swarm count={200} dummy={undefined} />
+    <ambientLight intensity={1} />
+    <Bubbles count={10} dummy={undefined} />
     <Postpro />
 
   </Canvas>
-)
+))
 
-function Swarm({ count, dummy = new THREE.Object3D() }: { count: number, dummy: any }) {
+function Bubbles({ count, dummy = new THREE.Object3D() }: { count: number, dummy: any }) {
   const mesh = useRef<any>()
   const light = useRef<any>()
   const particles = useMemo(() => {
@@ -37,12 +39,12 @@ function Swarm({ count, dummy = new THREE.Object3D() }: { count: number, dummy: 
     }
     return temp
   }, [count])
-  useFrame((state) => {
-    if (light.current) {
+  useFrame((state, delta) => {
+    if (light.current) { // Atualiza a cada segundo frame
       light.current.position.set((-state.mouse.x * state.viewport.width) / 5, (-state.mouse.y * state.viewport.height) / 5, 0)
       particles.forEach((particle, i) => {
         let { t, factor, speed, xFactor, yFactor, zFactor } = particle
-        t = particle.t += speed / 2
+        t = particle.t += speed / 2 * delta // Leva em conta o delta para garantir animação suave
         const a = Math.cos(t) + Math.sin(t * 1) / 10
         const b = Math.sin(t) + Math.cos(t * 2) / 10
         const s = Math.cos(t)
@@ -63,14 +65,10 @@ function Swarm({ count, dummy = new THREE.Object3D() }: { count: number, dummy: 
   })
   return (
     <>
-      <pointLight ref={light} distance={1000} intensity={1} color="#fff">
-        {/* <mesh scale={[6, 2, 6]}>
-          <dodecahedronGeometry args={[0.1, 5]} />
-        </mesh> */}
-      </pointLight>
+      <pointLight ref={light} distance={1000} intensity={1} color="#5a1748" />
       <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
-        <dodecahedronGeometry args={[2, 10]} />
-        <meshStandardMaterial color="#ebe9e4f0" roughness={0.1} />
+        <bufferGeometry attach="geometry" {...mergeGeometries(particles)} />
+        <meshStandardMaterial color="#b52323ed" roughness={0.1} />
       </instancedMesh>
     </>
   )
@@ -91,14 +89,42 @@ extend({ WaterPass, UnrealBloomPass, FilmPass, LUTPass })
 
 function Postpro() {
   const water = useRef<any>()
-  const data = useLoader(LUTCubeLoader, '/models/cubicle.CUBE')
+  const data = useLoader(LUTCubeLoader, 'models/cubicle.CUBE')
   useFrame((state) => (water.current.time = state.clock.elapsedTime * 4))
   return (
     <Effects disableGamma>
-      <waterPass ref={water} factor={1} />
+      <waterPass ref={water} factor={2} />
       <unrealBloomPass args={[undefined, 1.25, 1, 0]} />
       <filmPass args={[0.2, 0.5, 1500, false]} />
-      <lUTPass lut={data.texture} intensity={0.5} />
+      <lUTPass lut={data.texture} intensity={0.75} />
     </Effects>
   )
+}
+
+function mergeGeometries(particles: any) {
+  const mergedGeometry = new THREE.BufferGeometry()
+  const positions: number[] = []
+  const normals: number[] = []
+  const uvs: number[] = []
+
+  particles.forEach((particle: { xFactor: number, yFactor: number, zFactor: number }) => {
+    const geometry = new THREE.DodecahedronGeometry(1, 0) // Use a mesma geometria que você estava usando antes
+    geometry.translate(particle.xFactor, particle.yFactor, particle.zFactor) // Translade a geometria para a posição da partícula
+
+    const positionAttribute = geometry.getAttribute('position')
+    const normalAttribute = geometry.getAttribute('normal')
+    const uvAttribute = geometry.getAttribute('uv')
+
+    for (let i = 0; i < positionAttribute.count; i++) {
+      positions.push(positionAttribute.getX(i), positionAttribute.getY(i), positionAttribute.getZ(i))
+      normals.push(normalAttribute.getX(i), normalAttribute.getY(i), normalAttribute.getZ(i))
+      uvs.push(uvAttribute.getX(i), uvAttribute.getY(i))
+    }
+  })
+
+  mergedGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3))
+  mergedGeometry.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3))
+  mergedGeometry.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2))
+
+  return mergedGeometry
 }
