@@ -1,8 +1,7 @@
 /* eslint-disable react/display-name */
-import { memo } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 
-const TextEffect = memo(() => {
+const TextEffect = () => {
   return (
     <TypeAnimation
       sequence={[
@@ -20,6 +19,6 @@ const TextEffect = memo(() => {
       repeat={Infinity}
     />
   )
-})
+}
 
 export default TextEffect

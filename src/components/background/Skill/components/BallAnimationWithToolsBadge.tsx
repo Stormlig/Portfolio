@@ -1,6 +1,5 @@
 /* eslint-disable react/display-name */
-import { motion } from 'framer-motion'
-import { memo } from 'react'
+import { useMemo } from 'react'
 import {
   SiCss3,
   SiElectron,
@@ -39,35 +38,23 @@ const iconsWithColors = [
   { Icon: SiGit, color: '#F05032' }
 ]
 
-const BallAnimationWithToolsBadge = memo(() => {
-  return (
-    <div className='flex flex-col justify-center items-center w-[80%] my-36 mx-auto '>
-      <h1 className='text-[#b6e655] text-[45px] text-center mb-28'>Ferramentas</h1>
-      <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6  items-center gap-[3rem]  text-white'>
+const BallAnimationWithToolsBadge = () => {
+  const memoizedIcons = useMemo(() => {
+    return iconsWithColors.map(({ Icon, color }, index) => (
+      <div key={index} className='rounded-full w-[100px] h-[100px] p-2 -m-4 bg-[#ffffffdb] '>
+        <Icon size={60} style={{ color }} className='ml-3 mt-3' />
+      </div>
+    ))
+  }, [iconsWithColors])
 
-        {iconsWithColors.map(({ Icon, color }, index) => (
-          <div key={index} className='rounded-full w-[120px] h-[120px] p-2 -m-4 bg-white '>
-            <motion.div
-              className='absolute'
-              animate={{
-                x: [50, 0, 50],
-                y: [0, 50, 0],
-                transition: {
-                  repeat: Infinity,
-                  duration: 10,
-                  ease: 'linear',
-                  delay: Math.random() * 1
-                }
-              }}
-            >
-              <Icon size={40} style={{ color }} />
-            </motion.div>
-          </div>
-        ))}
+  return (
+    <div id='skills' className='flex flex-col justify-center items-center w-[80%] my-20 mx-auto '>
+      <h1 className='text-[#b6e655] text-[45px] md:text-[55px] text-center mb-28 font-bold'>Ferramentas</h1>
+      <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6  items-center gap-[4rem]  text-white'>
+        {memoizedIcons}
       </div>
     </div>
-
   )
-})
+}
 
 export default BallAnimationWithToolsBadge
