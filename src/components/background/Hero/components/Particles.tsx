@@ -4,7 +4,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable react/prop-types */
 import * as THREE from 'three'
-import { useRef, useMemo, memo } from 'react'
+import { useRef, useMemo, memo, useCallback } from 'react'
 import { Canvas, extend, useFrame, useLoader } from '@react-three/fiber'
 import { Effects } from '@react-three/drei'
 import { FilmPass, WaterPass, UnrealBloomPass, LUTPass, LUTCubeLoader } from 'three-stdlib'
@@ -26,6 +26,7 @@ export const ParticlesBg = memo(() => (
 function Bubbles({ count, dummy = new THREE.Object3D() }: { count: number, dummy: any }) {
   const mesh = useRef<any>()
   const light = useRef<any>()
+
   const particles = useMemo(() => {
     const temp = []
     for (let i = 0; i < count; i++) {
@@ -39,17 +40,22 @@ function Bubbles({ count, dummy = new THREE.Object3D() }: { count: number, dummy
     }
     return temp
   }, [count])
-  useFrame((state, delta) => {
-    if (light.current) { // Atualiza a cada segundo frame
+
+  const updateLightBubbles = useCallback((state: { mouse: { x: number, y: number }, viewport: { width: number, height: number } }, delta: number) => {
+    if (light.current) {
       light.current.position.set((-state.mouse.x * state.viewport.width) / 5, (-state.mouse.y * state.viewport.height) / 5, 0)
+
       particles.forEach((particle, i) => {
         let { t, factor, speed, xFactor, yFactor, zFactor } = particle
-        t = particle.t += speed / 2 * delta // Leva em conta o delta para garantir animação suave
+        t = particle.t += speed / 2 * delta
+
         const a = Math.cos(t) + Math.sin(t * 1) / 10
         const b = Math.sin(t) + Math.cos(t * 2) / 10
         const s = Math.cos(t)
+
         particle.mx += (state.mouse.x * 1000 - particle.mx) * 0.01
         particle.my += (state.mouse.y * 1000 - 1 - particle.my) * 0.01
+
         dummy.position.set(
           (particle.mx / 10) * a + xFactor + Math.cos((t / 10) * factor) + (Math.sin(t * 1) * factor) / 10,
           (particle.my / 10) * b + yFactor + Math.sin((t / 10) * factor) + (Math.cos(t * 2) * factor) / 10,
@@ -60,15 +66,18 @@ function Bubbles({ count, dummy = new THREE.Object3D() }: { count: number, dummy
         dummy.updateMatrix()
         mesh.current.setMatrixAt(i, dummy.matrix)
       })
+
       mesh.current.instanceMatrix.needsUpdate = true
     }
-  })
+  }, [])
+
+  useFrame((state, delta) => { updateLightBubbles(state, delta) })
+
   return (
     <>
-      <pointLight ref={light} distance={1000} intensity={1} color="#5a1748" />
+      <pointLight ref={light} distance={1000} intensity={0.01} color="#7cccb4" />
       <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
         <bufferGeometry attach="geometry" {...mergeGeometries(particles)} />
-        <meshStandardMaterial color="#b52323ed" roughness={0.1} />
       </instancedMesh>
     </>
   )
@@ -90,7 +99,12 @@ extend({ WaterPass, UnrealBloomPass, FilmPass, LUTPass })
 function Postpro() {
   const water = useRef<any>()
   const data = useLoader(LUTCubeLoader, 'models/cubicle.CUBE')
-  useFrame((state) => (water.current.time = state.clock.elapsedTime * 4))
+
+  const updatePositionWater = useCallback((state: { clock: { elapsedTime: number } }) => {
+    (water.current.time = state.clock.elapsedTime * 4)
+  }, [])
+  useFrame((state) => { updatePositionWater(state) })
+
   return (
     <Effects disableGamma>
       <waterPass ref={water} factor={2} />
