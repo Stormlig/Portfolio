@@ -13,7 +13,6 @@ const About = () => {
           </h2>
 
           <div className='mb-[2rem] flex items-center md:space-x-10'>
-            {/* <span className='w-[60px] hidden md:block h-[5px] bg-slate-400 roubded-sm'></span> */}
             <p className='text-[18px] md:text-[22px] text-[#ffffffc7] '>
               Olá eu sou o <span>Herrison Souza</span>.
               O Começo da jornada no mundo da programação foi em 2022.
@@ -39,8 +38,6 @@ const About = () => {
 
         {/* cap 3 */}
         <div className='flex mt-20 items-center'>
-          {/* <span className='w-[120px] hidden md:block h-[5px] bg-slate-400 roubded-sm mr-[3rem] mt-[6rem]'></span> */}
-
           <div className='md:w-[70%]'>
             <h2 className='whitespace-nowrap text-[22px] md:text-[35px] lg:text-[45px] font-bold text-white leading-[5rem] max-sm:text-[20px]'>
               O <span className='text-yellow-300'> amante </span>
