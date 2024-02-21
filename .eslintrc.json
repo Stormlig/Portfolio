@@ -29,6 +29,7 @@
       "@typescript-eslint/no-floating-promises": "off",
       "@typescript-eslint/space-before-function-paren": "off",
       "@typescript-eslint/prefer-nullish-coalescing": "off",
-      "@typescript-eslint/consistent-type-assertions": "off"
+      "@typescript-eslint/consistent-type-assertions": "off",
+      "eslint-disable react/display-name": "off"
     }
 }
