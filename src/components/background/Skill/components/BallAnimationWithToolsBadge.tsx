@@ -1,4 +1,6 @@
+/* eslint-disable react/display-name */
 import { motion } from 'framer-motion'
+import { memo } from 'react'
 import {
   SiCss3,
   SiElectron,
@@ -37,7 +39,7 @@ const iconsWithColors = [
   { Icon: SiGit, color: '#F05032' }
 ]
 
-const BallAnimationWithToolsBadge = () => {
+const BallAnimationWithToolsBadge = memo(() => {
   return (
     <div className='flex flex-col justify-center items-center w-[80%] my-36 mx-auto '>
       <h1 className='text-[#b6e655] text-[45px] text-center mb-28'>Ferramentas</h1>
@@ -66,6 +68,6 @@ const BallAnimationWithToolsBadge = () => {
     </div>
 
   )
-}
+})
 
 export default BallAnimationWithToolsBadge

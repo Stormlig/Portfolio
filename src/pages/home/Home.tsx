@@ -1,18 +1,21 @@
+/* eslint-disable react/display-name */
 import About from '../../components/background/About/About'
-import BallAnimationWithToolsBadge from '../../components/background/Skill/components/BallAnimationWithToolsBadge'
 import Contact from '../../components/background/Contact/Contact'
 import Footer from '../../components/background/Footer/Footer'
 import Header from '../../components/background/Header/Header'
-import Project from '../../components/background/Project/Project'
+import { lazy, memo } from 'react'
 
-const Home = () => {
+const Skill = lazy(async () => (await import('../../components/background/Skill/components/BallAnimationWithToolsBadge')))
+const Project = lazy(async () => (await import('../../components/background/Project/Project')))
+
+const Home = memo(() => {
   return (
     <main className="overflow-x-hidden flex flex-col">
       <Header />
       <span className='w-[100%]   h-[3px] bg-slate-400 roubded-sm'></span>
       <About />
       <span className='w-[100%]   h-[5px] bg-slate-400 roubded-sm'></span>
-      <BallAnimationWithToolsBadge />
+      <Skill />
       <span className='w-[100%]   h-[8px] bg-slate-400 roubded-sm'></span>
       <Project />
       <span className='w-[100%]   h-[8px] bg-slate-400 roubded-sm'></span>
@@ -21,6 +24,6 @@ const Home = () => {
       <Footer />
     </main>
   )
-}
+})
 
 export default Home
