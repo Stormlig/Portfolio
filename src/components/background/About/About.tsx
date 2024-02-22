@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <article className='flex flex-col h-full bg-[#04012a] pt-[4rem] pb-[4rem]'>
+    <section id="about" className='flex flex-col h-full bg-[#04012a] pt-[4rem] pb-[4rem]'>
       <div className=' w-[80%] mx-auto items-center'>
 
         <div className='md:w-[70%]'>
@@ -69,7 +69,7 @@ const About = () => {
         </div>
 
       </div>
-    </article >
+    </section>
   )
 }
 
