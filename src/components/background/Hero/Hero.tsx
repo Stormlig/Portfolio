@@ -7,9 +7,9 @@ import { memo } from 'react'
 
 const Hero = memo(() => {
   return (
-    <div className='relative h-[80vh] max-[320px]:h-[100vh] '>
+    <div className='relative h-[88vh] max-[320px]:h-[100vh] '>
       <ParticlesBg />
-      <div className='absolute top-28  flex flex-col items-baseline  sm:left-12 max-sm:left-8  md:left-20 lg:left-32 2xl:left-[10rem]'>
+      <div className='absolute w-[80%] max-[360px]:top-12  flex flex-col items-baseline  sm:left-12 max-sm:left-8  md:left-20 lg:left-32 2xl:left-[10rem]'>
 
         <div >
           <h1 className='text-[30px] md:text-[35px] text-white '>

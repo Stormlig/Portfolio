@@ -1,8 +1,8 @@
 const Contact = () => {
   return (
-    <section className="sm:w-[80%] xl:w-[70%] 2xl:w-[50%] mx-auto px-12 mt-8 mb-4">
+    <section id="contact" className="sm:w-[80%] xl:w-[70%] 2xl:w-[50%] mx-auto px-12 mt-8 mb-4">
       <div className=" text-white mb-8">
-        <h1 className=" mb-8 text-center text-yellow-300 font-bold text-[35px] md:text-[45px] lg:text-[55px]">CONTATO</h1>
+        <h1 className=" mb-8 text-center text-yellow-300 font-bold text-[35px] md:text-[45px] lg:text-[50px]">CONTATO</h1>
 
         <p className="text-[24px] md:text-[28px] xl:text-[33px]   mb-4">Interessado algo? <span className="text-yellow-300"> Surgiu alguma duvida? </span>
           Ficarei contente em responder. Envie-me uma mensagem</p>
