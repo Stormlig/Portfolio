@@ -3,11 +3,11 @@ const About = () => {
     <section id="about" className='flex flex-col h-full bg-[#04012a] pt-[4rem] pb-[4rem]'>
       <div className=' w-[80%] mx-auto items-center'>
 
-        <div className='md:w-[70%]'>
-          <h1 className='text-[45px] font-bold uppercase text-[#b6e655] mb-6 max-sm:text-[35px]'>
-            Sobre mim
-          </h1>
+        <h1 className='text-[45px] text-center md:text-[55px] font-bold uppercase text-[#b6e655] mb-6 max-sm:text-[35px]'>
+          Sobre mim
+        </h1>
 
+        <div className='md:w-[70%]'>
           <h2 className='text-[20px] md:text-[35px] lg:text-[45px] md:leading-[3rem] leading-[2rem] mt-[2rem] mb-[1rem] font-bold text-white'>
             Primeiros  <span className="text-yellow-300">passos</span>
           </h2>

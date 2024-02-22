@@ -3,7 +3,7 @@ import Nav from './components/Nav'
 
 const Header = () => {
   return (
-    <header id='home'>
+    <header id='home' >
       <Nav />
       <Hero />
     </header>
