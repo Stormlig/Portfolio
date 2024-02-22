@@ -26,16 +26,15 @@ body {
     @apply relative font-semibold text-white cursor-pointer text-[17px] w-fit md:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center hidden
   }
 
-  .nav-link-mobile{
-    @apply relative mb-[2rem] font-semibold text-white cursor-pointer text-[27px] w-fit md:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center
+  .nav-link-floating{
+    @apply relative mx-auto max-[400px]:mx-0 inset-0 font-semibold text-white cursor-pointer text-[12px] p-1 w-fit md:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-90 after:transition after:duration-300 after:origin-center
   }
 
   .heading{
-    @apply text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold
+    @apply text-center text-white text-[35px] sm:text-[33px] md:text-[45px] lg:text-[50px] font-bold my-4
   }
 
   .mySwiper .swiper-pagination-bullet{
-    background-color: white;
-    padding: 6px;
+    @apply bg-white p-[6px]
   }
 }
