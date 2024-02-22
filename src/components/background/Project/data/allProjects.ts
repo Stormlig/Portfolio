@@ -23,7 +23,7 @@ export const allProjects = [
 
   },
   {
-    title: 'Projecto-Website',
+    title: 'Projeto-Website',
     description: 'Primeiro projeto que fiz, quando decidir me tornar um desenvolvedor',
     media: '/images/projeto.png',
     link: 'https://stormlig.github.io/Projeto-Website/index.html#',
