@@ -19,7 +19,7 @@ const NavFloating = () => {
   useLayoutEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth
-      setShowNav(screenWidth < 768)
+      setShowNav(screenWidth < 1024)
     }
 
     handleResize() // Verifica o tamanho da tela imediatamente após a renderização do componente
