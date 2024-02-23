@@ -9,7 +9,7 @@ const Hero = memo(() => {
   return (
     <div className='w-[80%] flex flex-col items-baseline ml-10 mt-48 mb-24 max-[320px]:mt-32 md:ml-20 md:mt-60 md:mb-36 xl:ml-36 2xl:ml-48 2xl:mb-48 2xl:mt-72'>
 
-      <img className='rounded-full absolute right-10 mr-6 max-[1024px]:hidden' src="https://avatars.githubusercontent.com/u/114263838?s=400&u=80660d84dad59c4193624bf00b3b2f03dbccb3b5&v=4" alt="foto" />
+      <img className='rounded-full absolute right-14 mr-6 max-[1024px]:hidden w-96 h-96 2xl:top-60 2xl:right-28' src="https://avatars.githubusercontent.com/u/114263838?s=400&u=80660d84dad59c4193624bf00b3b2f03dbccb3b5&v=4" alt="foto" />
 
       <HexaneParticles />
 
