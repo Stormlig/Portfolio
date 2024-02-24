@@ -9,9 +9,13 @@ export default function HexaneParticles() {
   }, [])
 
   return (
+
     <Particles
-      options={{ particles: { move: { enable: true } } }}
+      options={{
+        particles: { move: { enable: true, direction: 'bottom' } }
+      }}
       init={particlesInit}
     />
+
   )
 }
