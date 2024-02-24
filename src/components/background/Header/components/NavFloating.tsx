@@ -22,12 +22,10 @@ const NavFloating = () => {
       setShowNav(screenWidth < 1024)
     }
 
-    handleResize() // Verifica o tamanho da tela imediatamente após a renderização do componente
+    handleResize()
 
-    // Adiciona um ouvinte de redimensionamento para atualizar o estado quando a tela for redimensionada
     window.addEventListener('resize', handleResize)
 
-    // Retorna uma função de limpeza para remover o ouvinte de redimensionamento quando o componente for desmontado
     return () => {
       window.removeEventListener('resize', handleResize)
     }

@@ -9,7 +9,7 @@ const Carousel = () => {
   const slides = useMemo(() => {
     return allProjects.map((project, index) => (
       <SwiperSlide key={index}>
-        <div v-if={project.media !== null} className="relative">
+        <div className="relative">
           <img
             src={project.media}
             className="w-full h-[510px] md:h-[800px] object-cover blur-sm opacity-20 rounded-md"
@@ -19,16 +19,16 @@ const Carousel = () => {
         <div className="absolute inset-1 flex flex-col justify-center items-center text-white text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 mt-4">{project.title}</h1>
           <p className="mx-2 leading-7 max-sm:text-[19px] md:text-[24px] xl:w-2/4 cursor-default ">{project.description}</p>
-          {project.link !== null && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-yellow-500 hover:bg-yellow-400 py-2 px-7 rounded-md font-bold mt-20 transition-all"
-            >
-              Confira
-            </a>
-          )}
+
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-yellow-500 hover:bg-yellow-400 py-2 px-7 rounded-md font-bold mt-20 transition-all"
+          >
+            Confira
+          </a>
+
         </div>
       </SwiperSlide>
     ))
