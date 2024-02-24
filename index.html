@@ -9,23 +9,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script id="waterVertexShader" type="x-shader/x-vertex">
-      varying vec2 vUv;
-      void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
-      </script>
-
-      <script id="waterFragmentShader" type="x-shader/x-fragment">
-      varying vec2 vUv;
-      uniform float time;
-      void main() {
-          // Use o código do shader de água aqui
-          vec2 uv = vUv;
-          float wave = sin(uv.x * 10.0 + time) * 0.1;
-          gl_FragColor = vec4(0.0, 0.5, 1.0, 0.5 - wave);
-      }
-      </script>
   </body>
 </html>
