@@ -14,9 +14,8 @@ const About = () => {
 
           <div className='mb-[2rem] flex items-center md:space-x-10'>
             <p className='text-[18px] md:text-[22px] text-[#ffffffc7] '>
-              Olá eu sou o <span>Herrison Souza</span>.
-              O Começo da jornada no mundo da programação foi em 2022.
-              Lá, construí relacionamentos significativos com colegas de classe que hoje são excelentes profissionais em suas respectivas áreas. Essa rede de contatos não apenas enriqueceu minha experiência de aprendizado, mas também me proporcionou oportunidades valiosas de colaboração e crescimento profissional.
+              Eu sou o <span>Herrison Souza</span>.
+              Começado minha jornada no mundo da programação lá em 2022, trilhei um caminho cheio de descobertas e aprendizados. Construí relacionamentos significativos com colegas de classe que, hoje, se tornaram excelentes profissionais em suas respectivas áreas. Essa rede de contatos não apenas enriqueceu minha experiência de aprendizado, mas também me proporcionou oportunidades valiosas de colaboração e crescimento profissional.
             </p>
           </div>
         </div>
@@ -40,11 +39,11 @@ const About = () => {
         <div className='flex mt-20 items-center'>
           <div className='md:w-[70%]'>
             <h2 className='whitespace-nowrap text-[22px] md:text-[35px] lg:text-[45px] font-bold text-white leading-[5rem] max-sm:text-[20px]'>
-              O <span className='text-yellow-300'> amante </span>
+              Além <span className='text-yellow-300'> disso </span>
             </h2>
 
             <p className='text-[18px] md:text-[22px] text-[#ffffffc7]'>
-              De livros, esportes, investimento e empreendedorismo,
+              Sou amante de livros, esportes, investimento e empreendedorismo,
               sou um autodidata dedicado a explorar e absorver conhecimento de diversas áreas. Meu amor pela leitura me transporta para mundos diferentes, enquanto a prática de esportes me mantém ativo e equilibrado. Além disso, procuro constantemente oportunidades de investimento e aprendizado no campo do empreendedorismo, sempre buscando expandir meus horizontes e alcançar novos patamares de sucesso.
             </p>
           </div>
@@ -62,10 +61,14 @@ const About = () => {
             </h2>
 
             <p className='text-[18px] md:text-[22px] text-[#ffffffc7]'>
-              Além disso, estou sempre aberto a novas oportunidades e desafios, buscando constantemente expandir meus horizontes e aprimorar minhas habilidades para me tornar um profissional mais completo e eficaz
+              Estou sempre aberto a novas oportunidades e desafios. Seja para colaborar em projetos, discutir ideias ou simplesmente trocar conhecimentos sobre finanças, filosofia ou qualquer outro tema interessante, estou pronto para embarcar nessa jornada ao seu lado.
             </p>
-          </div>
 
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center  my-40">
+          <h2 className="text-slate-300 italic font-semibold text-[24px] w-[60%] max-[360px]:text-[18px] max-sm:w-[80%] ">Então, vamos conversar? Estou ansioso para saber mais sobre você e como podemos colaborar juntos!</h2>
         </div>
 
       </div>
