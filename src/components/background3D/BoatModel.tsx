@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useBox, useRaycastVehicle } from '@react-three/cannon'
 import { useFrame, useLoader } from '@react-three/fiber'
@@ -8,8 +9,8 @@ import { useWheels } from '../../hook/useWheels'
 import { Quaternion, Vector3 } from 'three'
 import * as THREE from 'three'
 
-export function BoatModel ({ thirdPerson }: { thirdPerson: any }) {
-  const { scene } = useLoader(GLTFLoader, '/fishing_boat.glb')
+export function BoatModel({ thirdPerson }: { thirdPerson: any }) {
+  const { scene } = useLoader(GLTFLoader, '/models/fishing_boat.glb')
   const propellerRef = useRef<THREE.Mesh>()
 
   const position: [number, number, number] = [-0.2, 0, -10.66]
@@ -26,7 +27,7 @@ export function BoatModel ({ thirdPerson }: { thirdPerson: any }) {
     position,
     rotation: [0, 1.5, 0]
   }),
-  useRef(null)
+    useRef(null)
   )
 
   const { wheels, wheelInfos } = useWheels(width, height, front, wheelRadius)

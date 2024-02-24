@@ -8,7 +8,7 @@ interface ExtendedMesh extends Mesh {
   geometry: BufferGeometry
 }
 
-export function Ground () {
+export function Ground() {
   const [] = usePlane(
     () => ({
       type: 'Static',
@@ -17,7 +17,7 @@ export function Ground () {
     useRef(null)
   )
 
-  const gridMap = useLoader(TextureLoader, 'waternormals.jpeg')
+  const gridMap = useLoader(TextureLoader, '/images/waternormals.jpeg')
 
   const meshRef = useRef<ExtendedMesh | null>(null)
   const meshRef2 = useRef<ExtendedMesh | null>(null)

@@ -4,11 +4,11 @@ import { useFrame } from '@react-three/fiber'
 import { ColliderBox } from './ColliderBox'
 import { OutDoor } from './OutDoor'
 
-export function Water () {
+export function Water() {
   const waterRef = useRef()
 
   const waterGeometry = new THREE.BoxGeometry(28, -1.5, 28)
-  const waterTexture = new THREE.TextureLoader().load('waternormals.jpeg')
+  const waterTexture = new THREE.TextureLoader().load('/images/waternormals.jpeg')
 
   const waterMaterial = new THREE.MeshBasicMaterial({
     map: waterTexture,
@@ -31,7 +31,7 @@ export function Water () {
   })
 
   return (<>
-  <primitive object={waterMesh} ref={waterRef} />
+    <primitive object={waterMesh} ref={waterRef} />
 
     {/* mountain  */}
     {/* <ColliderBox position={[0.3, 0, 0.05]} scale={[10.4, 7.5, 8.76]} /> */}
@@ -45,6 +45,6 @@ export function Water () {
     {/* house-bar */}
     <ColliderBox position={[-9.3, 0.2, 4.8]} scale={[1.52, 1.5, 1.13]} />
 
-    <OutDoor text='Sobre mim' position={[-5, 0.5, -12]}/>
+    <OutDoor text='Sobre mim' position={[-5, 0.5, -12]} />
   </>)
 }

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
 export function IslandAbout() {
-  const { scene, materials } = useLoader(GLTFLoader, '/casa_obj.glb')
+  const { scene, materials } = useLoader(GLTFLoader, '/models/casa_bonita.glb')
 
   useEffect(() => {
     if (!materials?.agua) return

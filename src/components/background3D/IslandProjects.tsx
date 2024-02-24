@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
 export function IslandProjects() {
-  const { scene, materials } = useLoader(GLTFLoader, '/lighthouse_-_handpainted.glb')
+  const { scene, materials } = useLoader(GLTFLoader, '/models/lighthouse_-_handpainted.glb')
 
   useEffect(() => {
     if (!scene) return
@@ -13,7 +13,7 @@ export function IslandProjects() {
 
     materials.sea_light_up.visible = false
     materials.ground.visible = false
-  })
+  }, [])
 
   return <primitive object={scene} />
 }

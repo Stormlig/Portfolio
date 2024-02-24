@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
 export function IslandHobby() {
-  const { scene, materials } = useLoader(GLTFLoader, '/110761005house.glb')
+  const { scene, materials } = useLoader(GLTFLoader, '/models/house_small.glb')
 
   useEffect(() => {
     if (!scene) return
@@ -12,7 +12,7 @@ export function IslandHobby() {
     scene.children[0].position.set(-25.5, 2.5, 16)
 
     materials.water.visible = false
-  })
+  }, [])
 
   return <primitive object={scene} />
 }
