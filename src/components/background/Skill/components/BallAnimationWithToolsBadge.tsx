@@ -50,7 +50,7 @@ const BallAnimationWithToolsBadge = () => {
   return (
     <div id='skills' className='flex flex-col justify-center items-center w-[80%] my-20 mx-auto '>
       <h1 className='text-[#b6e655] text-[45px] md:text-[55px] text-center mb-28 font-bold'>Ferramentas</h1>
-      <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6  items-center gap-[4rem]  text-white'>
+      <div className='grid grid-cols-3 max-[400px]:grid-cols-2 md:grid-cols-4 lg:grid-cols-6  items-center gap-[4rem]  text-white'>
         {memoizedIcons}
       </div>
     </div>
