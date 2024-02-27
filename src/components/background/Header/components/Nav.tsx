@@ -1,8 +1,20 @@
 import { SiLinkedin, SiGithub } from 'react-icons/si'
 import { linkedin, github } from '../../../../utils/socials'
 import NavFloating from './NavFloating'
+import AlertMessage from './AlertMessage'
+import { useState } from 'react'
 
 const Nav = () => {
+  const [showAlert, setShowAlert] = useState(false)
+
+  const handleAlertClick = () => {
+    setShowAlert(true)
+  }
+
+  const handleAlertClose = () => {
+    setShowAlert(false)
+  }
+
   return (
     <>
       <NavFloating />
@@ -37,10 +49,11 @@ const Nav = () => {
           {/* <li className="nav-link"><a href="#skills">Ferramentas</a></li> */}
           <li className="nav-link"><a href="#project">Projetos</a></li>
           <li className="nav-link"><a href="#contact">Contato</a></li>
-          <li className="nav-link"><a href={'/3d'}>Versão 3D</a></li>
+          <li className="nav-link"><button onClick={handleAlertClick}>Versão 3D</button></li>
 
         </ul>
       </nav>
+      {showAlert && <AlertMessage onClose={handleAlertClose} />}
     </>
   )
 }
