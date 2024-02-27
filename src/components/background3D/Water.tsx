@@ -34,7 +34,7 @@ export function Water() {
     <primitive object={waterMesh} ref={waterRef} />
 
     {/* mountain  */}
-    {/* <ColliderBox position={[0.3, 0, 0.05]} scale={[10.4, 7.5, 8.76]} /> */}
+    <ColliderBox position={[0.3, 0, 0.05]} scale={[12.8, 2, 7.4]} />
 
     {/* market-fishing */}
     <ColliderBox position={[2.8, 0.2, 12.6]} scale={[2.2, 1.5, 2.3]} />
@@ -46,5 +46,18 @@ export function Water() {
     <ColliderBox position={[-9.3, 0.2, 4.8]} scale={[1.52, 1.5, 1.13]} />
 
     <OutDoor text='Sobre mim' position={[-5, 0.5, -12]} />
+
+    {/* barrier */}
+    <ColliderBox position={[0, 0, -13.8]} scale={[28, 1.5, 1.13]} />
+
+    <ColliderBox position={[0, 0, 13.8]} scale={[28, 1.5, 1.13]} />
+
+    <ColliderBox position={[0, 0, 13.8]} scale={[28, 1.5, 1.13]} />
+
+    <ColliderBox position={[13.8, 0, 0]} scale={[2, 1.5, 28.13]} />
+
+    <ColliderBox position={[13.8, 0, 0]} scale={[2, 1.5, 28.13]} />
+
+    <ColliderBox position={[-13.8, 0, 0]} scale={[2, 1.5, 28.13]} />
   </>)
 }
