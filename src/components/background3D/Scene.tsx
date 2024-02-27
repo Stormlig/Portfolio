@@ -2,7 +2,7 @@
 import { Suspense, useEffect, useState } from 'react'
 import { OrbitControls, PerspectiveCamera, Sky } from '@react-three/drei'
 import { type Vector3 } from '@react-three/fiber'
-// import { IslandSkill } from '../../components/background3D/IslandSkill'
+import { IslandSkill } from '../../components/background3D/IslandSkill'
 // import { IslandHobby } from '../../components/background3D/IslandHobby'
 // import { IslandProjects } from '../../components/background3D/IslandProjects'
 import { Water } from '../../components/background3D/Water'
@@ -52,7 +52,7 @@ export function Scene() {
       <pointLight position={[100, 100, 100]} />
       <pointLight position={[-100, -100, -100]} />
 
-      {/* <IslandSkill /> */}
+      <IslandSkill />
 
       <pointLight position={[50, 50, 50]} />
       <pointLight position={[-50, -50, -50]} />
