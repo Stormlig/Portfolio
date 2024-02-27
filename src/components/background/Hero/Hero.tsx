@@ -26,10 +26,17 @@ const Hero = memo(() => {
       <TextEffect />
 
       <div className='mt-12 flex-col space-y-6 sm:space-y-0 sm:flex sm:flex-row items-center sm:space-x-6'>
-        <button className='px-8 md:text-[24px] md:space-x-4 hover:bg-yellow-400 transition-all duration-200 py-4 text-[18px] font-bold uppercase bg-[#55e6a5] text-black flex items-center space-x-3 '>
+
+        <a
+          className='px-8 md:text-[24px] md:space-x-4 hover:bg-yellow-400 transition-all duration-200 py-4 text-[18px] font-bold uppercase bg-[#55e6a5] text-black flex items-center space-x-3 '
+          href="https://drive.google.com/file/d/1MVfjekpDRq5uHUarB-gG1aZAmCS6P6OH/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p>Download CV</p>
           <LuDownload className='w-[1.6rem] h-[1.7rem]' />
-        </button>
+        </a>
+
       </div>
     </section >
   )
