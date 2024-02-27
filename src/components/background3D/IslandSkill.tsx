@@ -10,7 +10,7 @@ export function IslandSkill() {
   useEffect(() => {
     if (!scene) return
 
-    scene.scale.set(0.00022, 0.001, 0.00022)
+    scene.scale.set(0.00029, 0.0007, 0.0002)
     scene.children[0].position.set(0, 0, -1000)
   }, [])
 
