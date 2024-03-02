@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className=" pb-20 pt-8 bg-[#02050a] text-white lg:py-10">
       <div className='flex flex-row-auto justify-around '>
-        <p className='text-[20px] flex'><FaRegCopyright className='w-[1.6rem] h-[2rem]' /> 2024 <span className='text-yellow-300 '> Herrison </span></p>
+        <p className='text-[20px] flex'><FaRegCopyright className='w-[1.6rem] h-[2rem]' /><span className='text-yellow-300 pl-1'> Herrison </span></p>
         <ul className='flex flex-row text-[2rem] '>
           <li className='mx-2 hover:text-yellow-100 duration-300'>
             <a href={linkedin} target="_blank"
