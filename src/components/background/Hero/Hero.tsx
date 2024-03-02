@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/jsx-no-undef */
-import { LuDownload } from 'react-icons/lu'
+// import { LuDownload } from 'react-icons/lu'
 import TextEffect from './components/TextEffect'
 import { memo } from 'react'
 import HexaneParticles from './components/HexaneParticles'
@@ -25,7 +25,7 @@ const Hero = memo(() => {
 
       <TextEffect />
 
-      <div className='mt-12 flex-col space-y-6 sm:space-y-0 sm:flex sm:flex-row items-center sm:space-x-6'>
+      {/* <div className='mt-12 flex-col space-y-6 sm:space-y-0 sm:flex sm:flex-row items-center sm:space-x-6'>
 
         <a
           className='px-8 md:text-[24px] md:space-x-4 hover:bg-yellow-400 transition-all duration-200 py-4 text-[18px] font-bold uppercase bg-[#55e6a5] text-black flex items-center space-x-3 '
@@ -37,7 +37,7 @@ const Hero = memo(() => {
           <LuDownload className='w-[1.6rem] h-[1.7rem]' />
         </a>
 
-      </div>
+      </div> */}
     </section >
   )
 })
