@@ -8,7 +8,7 @@ export const allProjects = [
   },
   {
     title: 'Smart Manager',
-    description: 'Gerenciador de serviços, desenvolvido para facilitar a gestão do comercio',
+    description: 'Um gerenciador desenvolvido para simplificar o registro de produtos e o controle de estoque em empresas.',
     media: '/images/smart-manager.png',
     link: 'https://github.com/Vortex-Technology/SmartManager-HJV-Electron',
     devTools: ''
@@ -16,7 +16,7 @@ export const allProjects = [
   },
   {
     title: 'Game-Car',
-    description: 'Esse projeto foi desenvolvido com o intuito de adquirir conhecimentos no frontend, principalmente na questão logica voltada para o mundo dos games, para que fosse possível criar meu porfolio em 3D',
+    description: 'Um projeto desenvolvido para adquirir conhecimentos em lógica de jogos, com foco em construir um portfólio em 3D.',
     media: '/images/game-car.png',
     link: 'https://game-car-mu.vercel.app/',
     devTools: ''
