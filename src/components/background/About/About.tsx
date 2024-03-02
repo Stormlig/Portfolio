@@ -68,7 +68,7 @@ const About = () => {
         </div>
 
         <div className="flex justify-center items-center  my-40">
-          <h2 className="text-slate-300 italic font-semibold text-[24px] w-[60%] max-[360px]:text-[18px] max-sm:w-[100%] ">Então, vamos conversar? Estou ansioso para saber mais sobre você e como podemos colaborar juntos!</h2>
+          <h2 className="text-slate-300 italic font-semibold text-[24px] w-[60%] md:w-[70%] md:text-center max-[360px]:text-[18px] max-sm:w-[100%] ">Então, vamos conversar? Estou ansioso para saber mais sobre você e como podemos colaborar juntos!</h2>
         </div>
 
       </div>
