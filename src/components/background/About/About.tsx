@@ -15,7 +15,7 @@ const About = () => {
           <div className='mb-[2rem] flex items-center md:space-x-10'>
             <p className='text-[18px] md:text-[22px] text-[#ffffffc7] '>
               Eu sou o <span>Herrison Souza</span>.
-              Começado minha jornada no mundo da programação lá em 2022, trilhei um caminho cheio de descobertas e aprendizados. Construí relacionamentos significativos com colegas de classe que, hoje, se tornaram excelentes profissionais em suas respectivas áreas. Essa rede de contatos não apenas enriqueceu minha experiência de aprendizado, mas também me proporcionou oportunidades valiosas de colaboração e crescimento profissional.
+              Começando minha jornada no mundo da programação lá em 2022, trilhei um caminho cheio de descobertas e aprendizados. Construí relacionamentos significativos com colegas de classe que, hoje, se tornaram excelentes profissionais em suas respectivas áreas. Essa rede de contatos não apenas enriqueceu minha experiência de aprendizado, mas também me proporcionou oportunidades valiosas de colaboração e crescimento profissional.
             </p>
           </div>
         </div>
