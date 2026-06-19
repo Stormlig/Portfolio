@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://portfolio-herrison.vercel.app/sitemap.xml

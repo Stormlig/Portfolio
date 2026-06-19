@@ -1,5 +1,10 @@
 {
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/portfolio/nutricionista/page": "app/portfolio/nutricionista/page.js"
+  "/portfolio/advogado/page": "app/portfolio/advogado/page.js",
+  "/portfolio/nutricionista/page": "app/portfolio/nutricionista/page.js",
+  "/portfolio/barbearia/page": "app/portfolio/barbearia/page.js",
+  "/portfolio/psicologo/page": "app/portfolio/psicologo/page.js"
 }
