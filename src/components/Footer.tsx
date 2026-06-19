@@ -21,7 +21,7 @@ export default function Footer() {
               HS<span className="text-violet-500">.</span>DEV
             </span>
             <p className="text-xs text-neutral-500 leading-relaxed max-w-sm">
-              Herrison Souza - Desenvolvedor Fullstack Freelancer especializado em criar sites e sistemas web premium, unindo design de ponta e infraestrutura robusta.
+              Herrison Souza - Soluções Digitais & Tecnologia. Especializado em criar sites e sistemas web premium, unindo design de ponta e infraestrutura robusta.
             </p>
             <div className="flex space-x-4">
               <a

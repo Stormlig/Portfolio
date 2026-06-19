@@ -116,7 +116,7 @@ export default function Hero() {
 
             <h3 className="text-xl font-bold text-white mb-1">Herrison Souza</h3>
             <p className="text-xs font-semibold text-violet-400 mb-4 tracking-wider uppercase">
-              Desenvolvedor Fullstack Freelancer
+              Soluções Digitais & Tecnologia
             </p>
 
             <div className="w-full space-y-2 text-left bg-black/30 rounded-xl p-4 border border-white/5 text-xs text-neutral-400">
